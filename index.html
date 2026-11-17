@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Currículo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cor: #1F5F5B;            /* sobrescrita pelo cv.json */
+      --fundo: #EEF1F2;
+      --papel: #FFFFFF;
+      --texto: #1C2626;
+      --suave: #5B6868;
+      --linha: #D6DDDD;
+      --titulo: "Bricolage Grotesque", "Segoe UI", sans-serif;
+      --corpo: "Public Sans", "Segoe UI", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--fundo); color: var(--texto); font: 16px/1.6 var(--corpo); padding: 2rem 1rem; }
+    .cv { max-width: 960px; margin: 0 auto; background: var(--papel); display: grid; grid-template-columns: 300px 1fr; box-shadow: 0 2px 24px rgba(0,0,0,.08); }
+    aside { background: var(--cor); color: #fff; padding: 2rem 1.5rem; }
+    aside a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.4); }
+    aside a:hover, aside a:focus-visible { border-bottom-color: #fff; }
+    .foto { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 20%; border-radius: 50%; border: 4px solid rgba(255,255,255,.85); display: block; margin-bottom: 1.5rem; }
+    aside h2 { color: #fff; border-color: rgba(255,255,255,.35); }
+    aside dt { font-size: .8rem; opacity: .75; }
+    aside dd { margin: 0 0 .7rem; overflow-wrap: anywhere; }
+    main { padding: 2.5rem 2.25rem; }
+    h1 { font: 700 2.6rem/1.1 var(--titulo); margin: 0; }
+    .cargo { font: 500 1.25rem var(--titulo); color: var(--cor); margin: .35rem 0 1.25rem; }
+    h2 { font: 700 1.1rem var(--titulo); color: var(--cor); border-bottom: 2px solid var(--linha); padding-bottom: .3rem; margin: 2rem 0 1rem; }
+    aside h2 { margin-top: 1.75rem; }
+    .resumo { max-width: 62ch; margin: 0; }
+    .item { border-left: 3px solid var(--cor); padding-left: 1rem; margin-bottom: 1.25rem; }
+    .item h3 { font: 600 1rem var(--corpo); margin: 0; }
+    .item .meta { color: var(--suave); font-size: .9rem; margin: 0 0 .4rem; }
+    .item ul { margin: 0; padding-left: 1.1rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .9rem; padding: 0; list-style: none; }
+    .tags li { background: rgba(255,255,255,.16); padding: .1rem .6rem; border-radius: 4px; font-size: .88rem; }
+    .grupo { font-size: .8rem; opacity: .75; margin: 0 0 .3rem; }
+    .idioma { display: flex; justify-content: space-between; margin: 0 0 .3rem; }
+    .erro { max-width: 640px; margin: 3rem auto; background: #fff; padding: 1.5rem; border-left: 4px solid #B3261E; }
+    .erro code { background: #eee; padding: .1rem .35rem; }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+    @media (max-width: 760px) { .cv { grid-template-columns: 1fr; } .foto { max-width: 200px; margin-inline: auto; } main { padding: 1.5rem; } h1 { font-size: 2.1rem; } }
+    @media print { body { background: #fff; padding: 0; } .cv { box-shadow: none; max-width: none; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  </style>
+</head>
+<body>
+  <div id="cv" class="cv" aria-live="polite">Carregando…</div>
+  <script src="dados.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
